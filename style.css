@@ -7,9 +7,15 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(80, 30, 128);
+    background-attachment: fixed;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+
+body, *{
+    color: white;
     text-align: justify;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; 
 }
 
 :root{
@@ -23,15 +29,11 @@ span{
     font-size: smaller ;
 }
 
-.container{
+.contain{
    height: auto;
    padding: 25px;
    box-sizing: border-box;
    border-radius: 20px;
-}
-
-.w-100{
-    width: 100%;
 }
 
 .gradient{
@@ -42,36 +44,22 @@ span{
     display: none;
 }
 
-.w-75{
-    width: 75%;
-}
-
 .light{
     background-color: var(--light-black);
 }
 
-.solid{
-    background-color: var(--black);
-}
-
-.d-flex{
-   display: flex;
-   justify-content: space-around;
-}
-
-.logo{
+#header{
     box-sizing: border-box;
     display: grid;
     justify-items: center;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    position: absolute;
     top: 0;
     height: 150px;
 }
 
-.logo p{
+#header p{
     margin: 0;
 }
 
@@ -102,8 +90,9 @@ li{
     padding: 10px;
     transition: 0.6s;
     transition-timing-function: linear;
-    height: 24px;
+    height: 45px;
     width: 20%;
+    z-index: 999;
 }
 
 li p{
@@ -120,6 +109,12 @@ li:hover p{
 
 li:hover{
     height: 105px;
+}
+a, img{
+    transition: all 200ms ease-out;
+}
+a:hover img{
+    box-shadow: 1px 1px 10px rgb(255, 0, 234);
 }
 
 b{
@@ -159,19 +154,20 @@ section p{
     font-size: small;
 }
 
-
 .footer{
+    margin-top: 100px;
     grid-column: 1/3;
 }
 
-.container-img{
+.contain-img{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
-    grid-gap: 15px;
+    grid-gap: 50px;
+    margin-top: 30px;
 }
 
-.container-img img{
+.contain-img img{
     width: 100%;
     border-radius: 15px;
 }
