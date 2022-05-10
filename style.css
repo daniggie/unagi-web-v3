@@ -75,6 +75,13 @@ img{
     margin-bottom: 15px;
 }
 
+pre code{
+    color: black;
+    height: 100px;
+    align-items: center;
+    font-size: 10px;
+}
+
 ul{
     list-style-type: none;
     text-align: justify;
