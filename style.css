@@ -60,7 +60,7 @@ span{
 }
 
 #header p{
-    margin: 0;
+    margin-bottom: 15px;
 }
 
 img{
@@ -76,16 +76,13 @@ img{
 }
 
 pre code{
-    color: black;
-    height: 100px;
-    align-items: center;
-    font-size: 10px;
+    padding: 15px;
+    height: 150px;
 }
 
 ul{
     list-style-type: none;
     text-align: justify;
-    padding-left: 0vw;
     width: 80%;
     display: flex;
     justify-content: space-evenly;
@@ -97,13 +94,15 @@ li{
     padding: 10px;
     transition: 0.6s;
     transition-timing-function: linear;
-    height: 45px;
+    height: 40px;
     width: 20%;
     z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 li p{
-    font-size: smaller;
     visibility: hidden;
     text-align: justify;
 }
@@ -115,7 +114,7 @@ li:hover p{
 }
 
 li:hover{
-    height: 105px;
+    height: 130px;
 }
 a, img{
     transition: all 200ms ease-out;
@@ -135,7 +134,7 @@ b{
     }
 
     li:hover{
-        height: 120px;
+        height: 160px;
     }
 }
 
