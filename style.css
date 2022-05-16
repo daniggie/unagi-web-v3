@@ -65,6 +65,14 @@ span{
    border-radius: 20px;
 }
 
+.carousel-control-prev, .carousel-control-next{
+height: 20.5vw;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+background-color: rgba(0, 0, 0, 0.5);
+}
+
 .gradient{
     background: var(--gradient);
 }
