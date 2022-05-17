@@ -221,8 +221,40 @@ void loop() {
                         <div class="container p-5 d-none d-md-block w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="container w-50 ">
-                                    <h5>Aula 08</h5>
-                                    <p>Descrição breve eminimalista sobre objetivo da atividade</p>
+                                    <h5>Aula 08 - Motor para frente e para trás</h5>
+                                    <p>Foi requisitada a prototipação de um motor que anda para frente e para trás nesta aula, 
+                                        novamente foi usado o tinkercad para a elaboração da atividade. Neste cenário se deve 
+                                        construir um motor que ande para frente e para trás para assim simular a roda do dispositivo
+                                        a ser criado. Seus componentes utilizados foram:
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Motor -  Usados para simular o motor acoplado a roda do robô;
+                                        </li>
+                                        <li>
+                                            Inversor hexadecimal - usado como amplificador e conversor das informações enviadas;
+                                        </li>
+                                        <li>
+                                            Acionador de motor de ponte H - usado para alterar o fluxo da corrente do motor, 
+                                            fazendo o mesmo “andar para trás”;
+                                        </li>
+                                        <li>
+                                            Placa de ensaio pequena - é uma matriz de ensaio com furos e fios de cobre usados para a conexão
+                                             dos dispositivos, neste caso usada para conectar o inversor e o acionador ao motor e ao arduino 
+                                            e conectar a fonte de energia com todos;
+                                        </li>
+                                        <li>
+                                            Arduino Uno - é uma placa para prototipagem de projetos de automação, nesta atividade está sendo 
+                                            usado para definir quando o motor deve ser ativado;
+                                        </li>
+                                        <li>
+                                            Fonte de energia - usado para gerar energia para o motor;
+                                        </li>
+                                        <li>
+                                            Conectores amarelo, roxo, vermelho, preto, verde, laranja e ciano - são usados para conectar 
+                                            todos os componentes para assim transmitir as informações e energia para todos.
+                                        </li>
+                                    </ol>
                                 </div>
                                 <pre class="container w-50">
                                 <code class="hljs">int IN1 = 2 ;
@@ -268,7 +300,37 @@ void loop(){
                             <div class="d-flex justify-content-between">
                                 <div class="container w-50" >
                                     <h5>Aula 09</h5>
-                                    <p>Descrição breve e minimalista sobre objetivo da atividade</p>
+                                    <p>
+                                        Na aula 09 fizemos o protótipo de um sistema que controla dois motores, neste sistema os motores são 
+                                        ativados de acordo com a leitura do sensor, simulando assim a roda andando para frente, para 
+                                        a direita e para a esquerda. Seus componentes utilizados foram:
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Motores-  Usados para simular o motor acoplado a roda do robô;
+                                        </li>
+                                        <li>
+                                            Resistores 300Ω- usados para limitar a corrente elétrica do circuito;
+                                        </li>
+                                        <li>
+                                            Placa de ensaio pequena - é uma matriz de ensaio com furos e fios de cobre usados para a conexão 
+                                            dos dispositivos, neste caso está sendo usado para conectar o resistor aos motores para evitar 
+                                            uma grande carga, causando estragos nos mesmos, e usada também para conectar os motores e o 
+                                            fotoresistor ao arduino;
+                                        </li>
+                                        <li>
+                                            Arduino Uno - é uma placa para prototipagem de projetos de automação, nesta atividade está sendo 
+                                            usado para definir quando cada motor deve ser ativado;
+                                        </li>
+                                        <li>
+                                            Fotoresistor - um sensor de luz utilizado para ler a claridade e enviar as informações para o 
+                                            arduino;
+                                        </li>
+                                        <li>
+                                            Conectores verde,azul, vermelho, preto e cinza - são usados para conectar todos os componentes 
+                                            para assim transmitir as informações e energia para todos.
+                                        </li>
+                                    </ol>
                                 </div>
                                 <pre class="container w-50">
                                 <code class="hljs">int motor = 7; 
