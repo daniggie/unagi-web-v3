@@ -21,18 +21,18 @@
     <div id="header">
         <img src="assets/logo.png" alt="logo">
         <p>Sexto sentido de reação</p>
-        <ul>
-            <li>
+        <ul class="infos">
+            <li class="names">
                 <b>Daniela</b>
                 <p>Design do site, HTML, CSS, roteiro sobre o que é a robótica e o que é a TI, desenvolvimento
                     dos slides, refatoração de código, inserção de imagens e manuseamento do bootstrap.</p>
             </li>
-            <li>
+            <li class="names">
                 <b>Roberta</b>
                 <p>Roteiro sobre fases da TI e qual é a relação da TI com a robótica, ajuste de textos e vídeo
                     no HTML, elaboração de códigos no tinkercad, estudo de componentes de tinkercad, descrição sobre as atividades.</p>
             </li>
-            <li>
+            <li class="names">
                 <b>Tailon</b>
                 <p>Design do site, edição do vídeo sobre Porque robótica na TI, adicionando áudios e música no
                     mesmo, roteiro sobre fases da robótica, ajustes em js, ajustes em responsividade do site, melhorias visuais.</p>
@@ -86,8 +86,39 @@
                         <div class="container p-5 d-none d-md-block w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="container w-50 ">
-                                    <h5>Aula 06</h5>
-                                    <p>Descrição breve e minimalista sobre objetivo da atividade</p>
+                                    <h5>Aula 06 - Semáforo</h5>
+                                    <p> Nesta atividade é apresentado um semáforo, que foi construído 
+                                        utilizando o  tinkercad, nele é lido os leds e acendido e apagado 
+                                        cada um após certo tempo estimado, para realmente simular um 
+                                        semáforo, os componentes utilizados foram:
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Led vermelho, verde e amarelo - um componente que transforma 
+                                            energia elétrica em luz, usado para simular as luzes do semáforo;
+                                        </li>
+                                        <li>
+                                            Resistor de 220Ω - usado para limitar a corrente elétrica do 
+                                            circuito;
+                                        </li>
+                                        <li>
+                                            Placa de ensaio pequena - é uma matriz de ensaio com furos e 
+                                            fios de cobre usados para a conexão dos dispositivos, neste 
+                                            caso está sendo usado para conectar o resistor nos leds 
+                                            para evitar uma grande carga, causando estragos nos mesmos;
+                                        </li>
+                                        <li>
+                                            Arduino Uno -é uma placa para prototipagem de projetos de 
+                                            automação, nesta atividade está sendo usado para definir 
+                                            quando cada led deve acender ou apagar;
+
+                                        </li>
+                                        <li>
+                                            Conectores verde, vermelho, amarelo e preto - são usados para 
+                                            conectar todos os componentes para assim transmitir as 
+                                            informações e energia para todos.
+                                        </li>
+                                    </ol>
                                 </div>
                                 <pre class="container w-50">
                                     <code class="hljs">void setup()
@@ -122,8 +153,44 @@ void loop(){
                         <div class="container p-5 d-none d-md-block w-100">
                             <div class="d-flex justify-content-between">
                                 <div class="container w-50">
-                                    <h5>Aula 07</h5>
-                                    <p>Descrição breve eminimalista sobre objetivo da atividade</p>
+                                    <h5>Aula 07 - Luz de emergência</h5>
+                                    <p> Na atividade 07 foi solicitado a criação de uma luz de emergência, 
+                                        foi utilizado o tinkercad para criação do protótipo, assim que o 
+                                        sensor identifica que não existe luz no local ele manda a 
+                                        informação para o arduino e ele acende a luz de energia, 
+                                        os componentes utilizados foram:
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            Lâmpada- Usada para representar a luz que é usada para iluminar 
+                                            quando há pouca luz;
+                                        </li>
+                                        <li>
+                                            Resistor 300Ω e 10kΩ - usados para limitar a corrente elétrica
+                                             do circuito;
+                                        </li>
+                                        <li>
+                                            Placa de ensaio pequena - é uma matriz de ensaio com furos e fios 
+                                            de cobre usados para a conexão dos dispositivos, neste caso está 
+                                            sendo usado para conectar o resistor na lâmpada para evitar uma 
+                                            grande carga, causando estragos nos mesmos;
+                                        </li>
+                                        <li>
+                                            Arduino Uno - é uma placa para prototipagem de projetos de 
+                                            automação, nesta atividade está sendo usado para definir quando 
+                                            ligar a lâmpada;
+
+                                        </li>
+                                        <li>
+                                            Fotoresistor - um sensor de luz utilizado para ler a claridade e 
+                                            enviar as informações para o arduino;
+                                        </li>
+                                        <li>
+                                            Conectores amarelo, vermelho, preto e laranja - são usados para 
+                                            conectar todos os componentes para assim transmitir as informações
+                                             e energia para todos.
+                                        </li>
+                                    </ol>
                                 </div>
                                 <pre class="container w-50">
                                 <code class="hljs">#define LAMPADA 2
