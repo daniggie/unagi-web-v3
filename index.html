@@ -119,6 +119,13 @@
                                             informações e energia para todos.
                                         </li>
                                     </ol>
+                                    <p>
+                                        No início foram declarados as saídas utlizadas, ou seja, os LED's. Dentro do loop é enviado, 
+                                        inicialmente, a informação para ligar o led verde que está conectado na porta 13, logo depois espera
+                                        5 segundos e desliga. Depois de esperar 1 segundo faz o mesmo com o led amarelo que está conectado
+                                        a porta 12 e finalmente finaliza com a mesma ação de esperar, ativar e desativar o led vermelho, 
+                                        conectado a porta 11.
+                                    </p>
                                 </div>
                                 <pre class="container w-50">
                                     <code class="hljs">void setup()
@@ -191,6 +198,14 @@ void loop(){
                                              e energia para todos.
                                         </li>
                                     </ol>
+                                    <p>
+                                        No início a variável LAMPADA é definida come referência a porta 2 e a variável LUZ como A0, que
+                                        representa o leitor de luz. No setup é declarado que a variável LAMPADA é do tipo OUTPUT, ou seja,
+                                        recebe informações e é também iniciado o monitor serial, que apresenta a leitura das informações.
+                                        No loop na variável luzInfo é informado que a mesma deve conter todas as informações da variável LUZ,
+                                        então é feita uma validação onde se a luzInfo for menor que 500 a lâmpada deve estar acesa, caso seja
+                                        maior a lâmpada deve estar deligada.
+                                    </p>
                                 </div>
                                 <pre class="container w-50">
                                 <code class="hljs">#define LAMPADA 2
@@ -255,6 +270,13 @@ void loop() {
                                             todos os componentes para assim transmitir as informações e energia para todos.
                                         </li>
                                     </ol>
+                                    <p>
+                                        Inicialmente é declarado com qual porta as variáveis IN1, IN2, IN3 e IN4 estão associadas,
+                                        logo depois no setup é declarado que todas são do tipo OUTPUT. No loop inicialmente é feito 
+                                        in código simulando o motor andando para frente, onde as variáveis IN1, IN2 e IN3 estão acionadas
+                                        e a IN4 não, indicando que os motores devem estar andando para frente. Depois de 2 segundos deve
+                                        deixar somente a IN2 não recebe energia, indicando que o motor está andando para trás.
+                                    </p>
                                 </div>
                                 <pre class="container w-50">
                                 <code class="hljs">int IN1 = 2 ;
@@ -282,11 +304,6 @@ void loop(){
     digitalWrite(IN4,HIGH);
     delay(2000);
 
-
-    digitalWrite(IN1,HIGH);
-    digitalWrite(IN3,HIGH);
-    digitalWrite(IN2,LOW);
-    digitalWrite(IN4,LOW);
 }    
                                 </code>                           
                             </pre>
@@ -310,9 +327,6 @@ void loop(){
                                             Motores-  Usados para simular o motor acoplado a roda do robô;
                                         </li>
                                         <li>
-                                            Resistores 300Ω- usados para limitar a corrente elétrica do circuito;
-                                        </li>
-                                        <li>
                                             Placa de ensaio pequena - é uma matriz de ensaio com furos e fios de cobre usados para a conexão 
                                             dos dispositivos, neste caso está sendo usado para conectar o resistor aos motores para evitar 
                                             uma grande carga, causando estragos nos mesmos, e usada também para conectar os motores e o 
@@ -323,42 +337,77 @@ void loop(){
                                             usado para definir quando cada motor deve ser ativado;
                                         </li>
                                         <li>
-                                            Fotoresistor - um sensor de luz utilizado para ler a claridade e enviar as informações para o 
+                                            Fotoresistores -  sensores de luz utilizados para ler a claridade e enviar as informações para o 
                                             arduino;
+                                        </li>
+                                        <li>
+                                            Acionador de motor de ponte H - usado para alterar o fluxo da corrente do motor, 
+                                            fazendo o mesmo “andar para trás”;
                                         </li>
                                         <li>
                                             Conectores verde,azul, vermelho, preto e cinza - são usados para conectar todos os componentes 
                                             para assim transmitir as informações e energia para todos.
                                         </li>
                                     </ol>
+                                    <p>
+                                        Inicialmente são declaradas em que cada porta estão associadas as variáveis, no setup são declaradas
+                                        que as variáveis ligadas aos motores são OUTPUT e as ligadas aos fotoresistores INPUT_PULLUP. No loop
+                                        são feitas validações onde se o fotoresistor 1 estiver LOW as variáveis motor 2 e 3 devem receber 
+                                        informações e as motores 1 e 4 não, para assim andar para frente. Depois novamente é feita uma 
+                                        validação, onde caso o fotoresistor2 for HIGH os motores 1 e 3 devem receber informações e o 2 e 4 não,
+                                        para assim simular andando para trás, senão, os motores 1 e 3 ficam LOW e os motores 2 e 4 HiGH. 
+                                        Na ultima validação caso a leitura do fotoresistor 3 ser dada como LOW, os 
+                                        motores 1 e 4 devem estar recebendo informações enquanto os motores 2 e 3 não, para virar.
+                                    </p>
                                 </div>
                                 <pre class="container w-50">
-                                <code class="hljs">int motor = 7; 
-int motor2 = 8;
-int ldrPin = 0;
-int ldrValor = 0;
+                                <code class="hljs">int motor1 = 1;
+int motor2 = 2;
+int motor3 = 6;
+int motor4 = 7;
 
-void setup() {
-    pinMode(motor,OUTPUT);
-    pinMode(motor2,OUTPUT); 
-    Serial.begin(9600); 
+int fotoresistor1 = 3;
+int fotoresistor2 = 4;
+int fotoresistor3 = 5;
+                                    
+void setup(){
+    pinMode(motor1, OUTPUT);
+    pinMode(motor2, OUTPUT);
+    pinMode(motor3, OUTPUT);
+    pinMode(motor4, OUTPUT);
+    
+    pinMode(fotoresistor1, INPUT_PULLUP);
+    pinMode(fotoresistor2, INPUT_PULLUP);
+    pinMode(fotoresistor3, INPUT_PULLUP);
+                                                              
 }
-void loop() {
-        ldrValor = analogRead(ldrPin);
-    
-    if (ldrValor >= 80)
-    digitalWrite(motor, HIGH);
+                                    
+void loop(){
+    if(digitalRead(fotoresistor1) == LOW)
+        digitalWrite(motor1, LOW);
+        digitalWrite(motor4, LOW);
+        digitalWrite(motor2, HIGH);
+        digitalWrite(motor3, HIGH);
+                                      
+    if(digitalRead(fotoresistor2) == HIGH)
+        digitalWrite(motor1, HIGH);
+        digitalWrite(motor3, HIGH);
+        digitalWrite(motor2, LOW);
+        digitalWrite(motor4, LOW);
     else
-    digitalWrite(motor, LOW);
-    
-    if (ldrValor <= 90)
-    digitalWrite(motor2, HIGH);
-    
-    else
-    digitalWrite(motor2, LOW);
-    
-    Serial.println(ldrValor);
-    delay(100);
+        digitalWrite(motor1, LOW);
+        digitalWrite(motor3, LOW);
+        digitalWrite(motor2, HIGH);
+        digitalWrite(motor4, HIGH);
+                                      
+    if(digitalRead(fotoresistor3) == LOW)
+        digitalWrite(motor1, HIGH);
+        digitalWrite(motor4, HIGH);
+        digitalWrite(motor2, LOW);
+        digitalWrite(motor3, LOW);
+                                       
+                                      
+                                      
 }
                                 </code>                           
                             </pre>
