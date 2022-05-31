@@ -7,23 +7,22 @@ code::-webkit-scrollbar {
   }
   
   code::-webkit-scrollbar-thumb {
-    background-color: white;    
+    background-color: rgba(0, 0, 0);    
     border-radius: 20px;      
     border: 3px solid #474949; 
   }
 
   body::-webkit-scrollbar {
-    width: 12px;               
+    width: 6px;               
   }
   
   body::-webkit-scrollbar-track {
-    background: #474949;     
+    background: rgba(73, 73, 73);     
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: white;    
-    border-radius: 20px;      
-    border: 3px solid #474949; 
+    background-color: rgb(0, 0, 0);    
+    border-radius: 0px;
   }
 
 
@@ -38,18 +37,16 @@ body{
     background-color: rgb(80, 30, 128);
     background-attachment: fixed;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
 
 body, *{
     color: white;
-    text-align: justify;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; 
 }
 
 :root{
     --light-black: rgba(0, 0, 0, 0.295);
-    --black: rgb(0, 0, 0);
+    --black: rgb(20, 20, 20);
     --gradient: linear-gradient(314.74deg, #AC00FD 20.7%, rgba(146, 34, 199, 0.51) 45.76%), 
     linear-gradient(120.02deg, rgba(255, 0, 153, 0.56) 12.96%, rgba(255, 0, 199, 0.2576) 31.59%), #1400FF;
 }
@@ -114,20 +111,19 @@ img{
 
 pre code{
     padding: 15px;
-    height: 400px;
+    max-height: 500px;
 }
 
 .infos{
     list-style-type: none;
-    text-align: justify;
     width: 80%;
     display: flex;
     justify-content: space-evenly;
 }
 
 .names{
-    background: var(--gradient);
-    border-radius: 20px;
+    background: var(--black);
+    border-radius: 10px;
     padding: 10px;
     transition: 0.6s;
     transition-timing-function: linear;
@@ -137,21 +133,30 @@ pre code{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 1px 1px 10px rgb(0, 0, 0);
+
 }
 
-.names p{
+.names .desc{
     visibility: hidden;
-    text-align: justify;
 }
 
-.names:hover p{
+.names .desc div{
+    background-color: rgba(255, 0, 234, 0.822);
+    border-radius: 5px;
+    padding: 4px;
+    margin: 1px;
+    width: auto;
+
+}
+
+.names:hover .desc{
     visibility: visible;
-    transition-delay: 0.5s;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .names:hover{
-    height: 130px;
+    height: auto;
 }
 a, img{
     transition: all 200ms ease-out;
@@ -161,8 +166,8 @@ a:hover img{
 }
 
 b{
-    font-weight: lighter;
-    font-size: 12px;
+    font-weight: lighter !important;
+    margin-bottom: 5px;
 }
 
 ol{
@@ -170,12 +175,8 @@ ol{
 }
 
 @media only screen and (max-width: 1580px) {
-    .names p{
+    .names .desc{
         font-size: 11px;
-    }
-
-    .names:hover{
-        height: 160px;
     }
 }
 
